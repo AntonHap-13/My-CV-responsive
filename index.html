@@ -14,7 +14,14 @@
     <main>
                <!-- ***********************  ABOUT / PROFILE  *********************** -->
         <header>
-            <div class="content-wrap">
+            <a href="#" onclick="gigya.accounts.showScreenSet({screenSet:'Default-RegistrationLogin'});">Login</a>
+
+        <a href="#" onclick="gigya.accounts.showScreenSet({screenSet:'Default-RegistrationLogin', startScreen:'gigya-register-screen'});">Register</a>
+
+        <a href="#" onclick="gigya.accounts.showScreenSet({screenSet:'Default-ProfileUpdate'});">Edit</a>
+
+        <a href="#" onclick="gigya.accounts.logout();">Logout</a>
+		<div class="content-wrap">
                 <h1>Anton Haptyanov</h1>
                 <h2>Junior Front-End Developer</h2>
                 <img src="img/839_oooo.plus.png" alt="My photo">
@@ -246,14 +253,7 @@
                     <li><a href="mailto:anton.haptyanov@gmial.com">anton.haptyanov@gmail.com</a></li>
                     <li><a href="#" target="_blank">antonhaptyanov.com</a></li>
                     <li><a href="https://www.linkedin.com/in/anton-haptyanov-a321b314/" target="_blank">LinkedIn</a></li>
-			 <a href="#" onclick="gigya.accounts.showScreenSet({screenSet:'Default-RegistrationLogin'});">Login</a>
-
-        <a href="#" onclick="gigya.accounts.showScreenSet({screenSet:'Default-RegistrationLogin', startScreen:'gigya-register-screen'});">Register</a>
-
-        <a href="#" onclick="gigya.accounts.showScreenSet({screenSet:'Default-ProfileUpdate'});">Edit</a>
-
-        <a href="#" onclick="gigya.accounts.logout();">Logout</a>
-                </ul>
+			                </ul>
             </div>
         </footer>
     </main>
