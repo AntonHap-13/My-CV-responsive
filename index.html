@@ -3,14 +3,22 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
     <title>Anton Haptyanov, Front-end Developer</title>
     <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="https://cdns.ru1.gigya.com/js/gigya.js?apikey=3__mTikX5yZJrEckcALfJ-DEbe1SDdfaDvIRMVZvz0if3K-v-XoFJeoWbka6t32ncf"></script>
 </head>
 
 <body>
     <main>
+        <a href="#" onclick="gigya.accounts.showScreenSet({screenSet:'Default-RegistrationLogin'});">Login</a>
+
+        <a href="#" onclick="gigya.accounts.showScreenSet({screenSet:'Default-RegistrationLogin', startScreen:'gigya-register-screen'});">Register</a>
+
+        <a href="#" onclick="gigya.accounts.showScreenSet({screenSet:'Default-ProfileUpdate'});">Edit</a>
+
+        <a href="#" onclick="gigya.accounts.logout();">Logout</a>
         <!-- ***********************  ABOUT / PROFILE  *********************** -->
         <header>
             <div class="content-wrap">
@@ -249,6 +257,16 @@
             </div>
         </footer>
     </main>
-</body>
+<script>
+	function onLogout(response) {   
+		if ( response.errorCode == 0 ) {                
+			alert('You are now logged out'); 
+		} 
+		else { 
+			alert('Error :' + response.errorMessage); 
+		} 
+	}
+</script>
+    </body>
 
 </html>
