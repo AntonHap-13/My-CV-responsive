@@ -14,18 +14,18 @@
     <main>
                <!-- ***********************  ABOUT / PROFILE  *********************** -->
         <header>
-            <a href="#" onclick="gigya.accounts.showScreenSet({screenSet:'Default-RegistrationLogin'});">Login</a>
 
-        <a href="#" onclick="gigya.accounts.showScreenSet({screenSet:'Default-RegistrationLogin', startScreen:'gigya-register-screen'});">Register</a>
-
-        <a href="#" onclick="gigya.accounts.showScreenSet({screenSet:'Default-ProfileUpdate'});">Edit</a>
-
-        <a href="#" onclick="gigya.accounts.logout();">Logout</a>
 		<div class="content-wrap">
                 <h1>Anton Haptyanov</h1>
                 <h2>Junior Front-End Developer</h2>
                 <img src="img/839_oooo.plus.png" alt="My photo">
-                <p>Dedicated individual with a pro-active approach and the crucial ability to operate both independently and in fast-paced team environments</p>
+<div class="login-buttons">
+  <button type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet({screenSet:'Default-RegistrationLogin'});">Login</a></button>
+  <button type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet({screenSet:'Default-RegistrationLogin', startScreen:'gigya-register-screen'});">Register</a></button>
+  <button type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet({screenSet:'Default-ProfileUpdate'});">Edit</a></button>
+  <button type="button" name="button"><a href="#" onclick="gigya.accounts.logout();">Logout</a></button>
+</div>
+                              <p>Dedicated individual with a pro-active approach and the crucial ability to operate both independently and in fast-paced team environments</p>
                 <p>Reach experience in providing IT support to medium to large size teams for mission critical 7/24 trading applications, API platforms, corporate systems and web applications </p>
             </div>
         </header>
@@ -258,13 +258,13 @@
         </footer>
     </main>
 <script>
-	function onLogout(response) {   
-		if ( response.errorCode == 0 ) {                
-			alert('You are now logged out'); 
-		} 
-		else { 
-			alert('Error :' + response.errorMessage); 
-		} 
+	function onLogout(response) {
+		if ( response.errorCode == 0 ) {
+			alert('You are now logged out');
+		}
+		else {
+			alert('Error :' + response.errorMessage);
+		}
 	}
 </script>
     </body>

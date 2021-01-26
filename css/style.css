@@ -21,11 +21,11 @@ body {
 img {
     width: 300px;
     border-radius: 100px;
-}
+  }
 
 a {
     color: #EDFBC1;
-}
+  }
 
 a:hover {
     text-decoration: none;
@@ -76,12 +76,34 @@ h3 {
     border-bottom: none;
 }
 
-/*Profile 
+/*Profile
 ----------------------*/
 header {
     background-color: #37718E;
     color: #EAD637;
-
+}
+.login-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.login-buttons button {
+  border-radius: 50%;
+  background-color: #fdc500;
+  padding: 15px 30px;
+  margin: 15px;
+}
+.login-buttons button:hover{
+  background-color: #23B5D3;
+  transition-duration: 0.4s;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+.login-buttons a{
+  color: #37718E;
+  text-decoration: none;
+}
+.login-buttons a:hover{
+  color: #fdc500;
 }
 
 /*Projects
