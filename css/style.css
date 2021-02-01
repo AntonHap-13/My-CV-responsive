@@ -88,6 +88,7 @@ header {
   justify-content: center;
 }
 .login-buttons button {
+  font-weight: bold;
   border-radius: 15px;
   background-color: #fdc500;
   padding: 15px 30px;
