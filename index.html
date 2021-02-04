@@ -13,13 +13,17 @@
 
 <body>
     <main>
+<nav class="login-buttons">
+    <button class="glow-on-hover" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet({screenSet:'reglog_anton', containerID:'my-reglog', startScreen:'anton-register-screen'});">Register</a></button>
+    <button class="glow-on-hover"  type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet({screenSet:'reglog_anton', containerID:'my-reglog', startScreen:'login-screen'});">Login</a></button>
+    <button class="glow-on-hover" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet({screenSet:'profileUpdate_anton', containerID:'my-reglog'});">Edit Your Profile</a></button>
+    <button class="glow-on-hover" type="button" name="button"><a href="#" onclick="gigya.accounts.logout();">Logout</a></button>
+</nav>
+
+      <div id="my-reglog">
+
+      </div>
                <!-- ***********************  ABOUT / PROFILE  *********************** -->
-
-
-
-               <div id="my-reglog">
-
-               </div>
         <header>
 
 		<div class="content-wrap">
@@ -27,12 +31,6 @@
                 <h2>Junior Front-End Developer</h2>
                 <img src="img/839_oooo.plus.png" alt="My photo">
 
-<div class="login-buttons">
-  <button  type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet({screenSet:'reglog_anton', containerID:'my-reglog', startScreen:'anton-register-screen'});">Register</a></button>
-  <button  type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet({screenSet:'reglog_anton', containerID:'my-reglog', startScreen:'login-screen'});">Login</a></button>
-  <button  type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet({screenSet:'profileUpdate_anton', containerID:'my-reglog'});">Edit Your Profile</a></button>
-  <button  type="button" name="button"><a href="#" onclick="gigya.accounts.logout();">Logout</a></button>
-</div>
 
 
 
