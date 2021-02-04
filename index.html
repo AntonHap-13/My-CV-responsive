@@ -7,25 +7,43 @@
     <title>Anton Haptyanov, Front-end Developer</title>
     <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <script type="text/javascript" src="https://cdns.ru1.gigya.com/js/gigya.js?apikey=3__mTikX5yZJrEckcALfJ-DEbe1SDdfaDvIRMVZvz0if3K-v-XoFJeoWbka6t32ncf"></script>
+    <script type="text/javascript" lang="javascript" src="https://cdns.ru1.gigya.com/js/gigya.js?apikey=3__mTikX5yZJrEckcALfJ-DEbe1SDdfaDvIRMVZvz0if3K-v-XoFJeoWbka6t32ncf"></script>
+
 </head>
 
 <body>
     <main>
                <!-- ***********************  ABOUT / PROFILE  *********************** -->
+
+
+
+               <div id="my-reglog">
+
+               </div>
         <header>
 
 		<div class="content-wrap">
                 <h1>Anton Haptyanov</h1>
                 <h2>Junior Front-End Developer</h2>
                 <img src="img/839_oooo.plus.png" alt="My photo">
-<div class="login-buttons">
 
-  <button class="glow-on-hover" type="button" name="button"><a href="#">Register</a></button>
-  <button class="glow-on-hover" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet({screenSet:'reglog_anton', containerID:'container', startScreen:'gigya-login-screen'});">Login</a></button>
-  <button class="glow-on-hover" type="button" name="button"><a href="#">Edit Your Profile</a></button>
-  <button class="glow-on-hover" type="button" name="button"><a href="#" onclick="gigya.accounts.logout();">Logout</a></button>
-</div>
+<!-- <div class="login-buttons">
+  <button  type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet({screenSet:'reglog_anton', containerID:'my-reglog', startScreen:'anton-register-screen'});">Register</a></button>
+  <button  type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet({screenSet:'reglog_anton', containerID:'my-reglog', startScreen:'login-screen'});">Login</a></button>
+  <button  type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet({screenSet:'profileUpdate_anton', containerID:'my-reglog'});">Edit Your Profile</a></button>
+  <button  type="button" name="button"><a href="#" onclick="gigya.accounts.logout();">Logout</a></button>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
                               <p>Dedicated individual with a pro-active approach and the crucial ability to operate both independently and in fast-paced team environments</p>
                 <p>Reach experience in providing IT support to medium to large size teams for mission critical 7/24 trading applications, API platforms, corporate systems and web applications </p>
             </div>
@@ -38,7 +56,7 @@
 
                 <!-- Copy the whole <section> block to add more projects. -->
                 <section class="project_item">
-                    <img src="img/joanna-kosinska-unsplash.jpg" alt="description of image">
+                    <img src="" alt="description of image">
                     <h3>Project name</h3>
                     <p>Summary or description of the project and/or your role in it. Add as many paragraphs as you need.</p>
                     <a class="btn" href="#" target="_blank">View project / case study</a>
@@ -48,6 +66,8 @@
         </section>
 
         <!-- ***********************  SKILLS *********************** -->
+
+
         <section class="skills">
             <div class="content-wrap item-details divider">
                 <h2>Skills</h2>
@@ -246,9 +266,7 @@
 
         <!-- *****************  CONTACT INFO / SOCIAL MEDIA  ***************** -->
         <footer>
-          <div id="container">
 
-          </div>
 
             <div class="content-wrap">
                 <h2>Let's Keep in Touch!</h2>
@@ -262,6 +280,17 @@
             </div>
         </footer>
     </main>
+
+    <script>
+    // Load screen-set
+    var params={
+        screenSet: "reglog_anton",
+        containerID:"my-reglog",
+        startScreen:"anton-register-screen"
+    }
+    gigya.accounts.showScreenSet(params);
+    </script>
+
 <script>
 	function onLogout(response) {
 		if ( response.errorCode == 0 ) {
