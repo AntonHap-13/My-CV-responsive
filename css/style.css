@@ -75,10 +75,30 @@ h3 {
 .divider > section:last-of-type {
     border-bottom: none;
 }
+nav{
+width: 100%;
+background-image: url(/img/joanna-kosinska-unsplash.jpg);
+display: inline-flex;
+}
 .login-buttons {
   width: 100%;
-  display:flex;
-  justify-content: flex-end;
+display: flex;
+justify-content: flex-end;
+  align-self: center;
+}
+.logo{
+width: 50%;
+display: flex;
+justify-content: flex-end;
+align-items: center;
+}
+#sap-logo{
+  width: 30%;
+  border-radius: 0;
+  margin: 10px;
+}
+.logo h2{
+  color: #37718E;
 }
 .login-buttons button {
   font-weight: bold;
@@ -89,8 +109,14 @@ h3 {
   font-family: 'Caveat', cursive;
   font-size: 1em;
   }
-
-
+  /*Reglog
+  ----------------------*/
+/* .reglog-wrapper{
+  background: #37718E;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+} */
 
 /*Profile
 ----------------------*/
