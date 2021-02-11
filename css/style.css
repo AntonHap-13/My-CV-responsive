@@ -1,96 +1,96 @@
 /* Global styles________________________ */
 html {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 *,
 *:before,
 *:after {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 body {
-    color: #2b2d42;
-    margin: 0;
-    padding: 0;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
-    line-height: 1.5;
+  color: #2b2d42;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
 }
 
 img {
-    width: 300px;
-    border-radius: 100px;
-  }
+  width: 300px;
+  border-radius: 100px;
+}
 
 a {
-    color: #EDFBC1;
-  }
+  color: #EDFBC1;
+}
 
 a:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 h1 {
-    font-size: 100px;
-    line-height: 1;
+  font-size: 100px;
+  line-height: 1;
 }
 
 h2 {
-    font-size: 45px;
+  font-size: 45px;
 }
 
 h1,
 h2 {
-    font-family: 'Caveat', cursive;
-    font-weight: 400;
-    margin: 0;
+  font-family: 'Caveat', cursive;
+  font-weight: 400;
+  margin: 0;
 }
 
 .content-wrap {
-    max-width: 800px;
-    width: 85%;
-    margin: 0 auto;
-    padding: 60px 0;
+  max-width: 800px;
+  width: 85%;
+  margin: 0 auto;
+  padding: 60px 0;
 }
 
 h3 {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .item-details h3 + p {
-    font-style: italic;
+  font-style: italic;
 
 }
 
 .item-details h3 ~ p {
-    margin: 0;
+  margin: 0;
 }
 
 .divider > section {
-    border-bottom: 1px dashed #616163ff;
-    padding: 25px 0;
+  border-bottom: 1px dashed #616163ff;
+  padding: 25px 0;
 }
 
 .divider > section:last-of-type {
-    border-bottom: none;
+  border-bottom: none;
 }
 nav{
-width: 100%;
-background-image: url(/img/joanna-kosinska-unsplash.jpg);
-display: inline-flex;
+  width: 100%;
+  background-image: url(/img/joanna-kosinska-unsplash.jpg);
+  display: inline-flex;
 }
 .login-buttons {
   width: 100%;
-display: flex;
-justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
   align-self: center;
 }
 .logo{
-width: 50%;
-display: flex;
-justify-content: flex-end;
-align-items: center;
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 #sap-logo{
   width: 30%;
@@ -108,29 +108,21 @@ align-items: center;
   margin: 15px;
   font-family: 'Caveat', cursive;
   font-size: 1em;
-  }
-  /*Reglog
-  ----------------------*/
-/* .reglog-wrapper{
-  background: #37718E;
-  max-width: 800px;
-  width: 100%;
-  margin: 0 auto;
-} */
+}
 
 /*Profile
 ----------------------*/
 header {
-    background-color: #37718E;
-    color: #EAD637;
+  background-color: #37718E;
+  color: #EAD637;
 }
 
 /* .login-buttons button:hover{
-  background-color: #23B5D3;
-  transition-duration: 0.4s;
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+background-color: #23B5D3;
+transition-duration: 0.4s;
+box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 
-  }*/
+}*/
 .login-buttons a{
   color: #23B5D3;
   text-decoration: none;
@@ -140,195 +132,194 @@ header {
 }
 
 .glow-on-hover {
-    width: 220px;
-    height: 50px;
-    border: none;
-    outline: none;
-    color: #fff;
-    background: #111;
-    cursor: pointer;
-    position: relative;
-    z-index: 0;
-    border-radius: 10px;
+  width: 220px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
 }
 
 .glow-on-hover:before {
-    content: '';
-    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-    position: absolute;
-    top: -2px;
-    left:-2px;
-    background-size: 400%;
-    z-index: -1;
-    filter: blur(5px);
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-    animation: glowing 20s linear infinite;
-    opacity: 0;
-    transition: opacity .3s ease-in-out;
-    border-radius: 10px;
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left:-2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
 }
 
 .glow-on-hover:active {
-    color: #000;
+  color: #000;
 }
 
 .glow-on-hover:active:after {
-    background: transparent;
+  background: transparent;
 }
 
 .glow-on-hover:hover:before {
-    opacity: 1;
+  opacity: 1;
 }
 
 .glow-on-hover:after {
-    z-index: -1;
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #111;
-    left: 0;
-    top: 0;
-    border-radius: 10px;
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
 }
 
 @keyframes glowing {
-    0% { background-position: 0 0; }
-    50% { background-position: 400% 0; }
-    100% { background-position: 0 0; }
-} */
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+  } */
 
-/*Projects
-----------------------*/
-.projects {
+  /*Projects
+  ----------------------*/
+  .projects {
     background: #AEF3E7;
     display:none;
-}
+  }
 
-.projects a {
+  .projects a {
     color: #434371;
-}
+  }
 
-.projects .btn {
+  .projects .btn {
     color: #E3D3E4;
     background: #873D48;
     text-decoration: none;
     padding: 8px;
     border-radius: 4px;
     display: inline-block;
-}
+  }
 
-.projects .btn:hover {
+  .projects .btn:hover {
     background: rgba(135, 61, 72, 80%)
-}
+  }
 
-.project_item {
+  .project_item {
     overflow: hidden;
 
-}
+  }
 
 
 
-.project_item h3 {
+  .project_item h3 {
     margin-top: 0;
-}
+  }
 
-/*Skills
-----------------------*/
-.skills {
+  /*Skills
+  ----------------------*/
+  .skills {
     background: #fdc500;
-}
+  }
 
-.skills-summary ul {
+  .skills-summary ul {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
-}
+  }
 
-/*Work expirence
-----------------------*/
-.work-experience {
+  /*Work expirence
+  ----------------------*/
+  .work-experience {
     background: #23B5D3;
-}
+  }
 
-/*Education
-----------------------*/
-.education {
+  /*Education
+  ----------------------*/
+  .education {
     background-image: url(/img/joanna-kosinska-unsplash.jpg);
     background-size: cover;
     background-position: top right;
     padding-bottom: 30px;
-}
+  }
 
-.education p {
+  .education p {
     width: 60%;
-}
+  }
 
-.education-item-wrapper {
+  .education-item-wrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
-}
+  }
 
-/*Contact info
-----------------------*/
-footer {
+  /*Contact info
+  ----------------------*/
+  footer {
     background: #616163ff;
     color: #C6C5B9;
 
-}
+  }
 
-.contact-list {
+  .contact-list {
     list-style-type: none;
     padding: 0;
 
-}
+  }
 
-.contact-list a {
+  .contact-list a {
     padding: 15px;
     display: inline-block;
 
-}
+  }
 
-/*Responsive
-----------------------*/
-@media screen and (min-width:750px) {
+  /*Responsive
+  ----------------------*/
+  @media screen and (min-width:750px) {
 
     header,
     footer {
-        text-align: center;
+      text-align: center;
     }
 
     .project_item img {
-        float: left;
-        margin-right: 20px;
+      float: left;
+      margin-right: 20px;
     }
 
     .job-item {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        column-gap: 20px;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      column-gap: 20px;
     }
 
     .contact-list {
-        display: flex;
-        justify-content: center;
+      display: flex;
+      justify-content: center;
     }
-}
+  }
 
-@media screen and (max-width:749px) {
+  @media screen and (max-width:749px) {
     h1 {
-        font-size: 75px;
-        line-height: 0.9;
-        margin-bottom: 20px;
+      font-size: 75px;
+      line-height: 0.9;
+      margin-bottom: 20px;
     }
 
     h2 {
-        line-height: 1;
+      line-height: 1;
     }
 
     .contact-list a {
-        padding: 5px;
+      padding: 5px;
     }
-}
