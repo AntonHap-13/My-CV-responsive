@@ -8,7 +8,34 @@
   <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script type="text/javascript" lang="javascript" src="https://cdns.ru1.gigya.com/js/gigya.js?apikey=3__mTikX5yZJrEckcALfJ-DEbe1SDdfaDvIRMVZvz0if3K-v-XoFJeoWbka6t32ncf"></script>
+  <script type="text/javascript" lang="javascript" src="https://cdns.ru1.gigya.com/js/gigya.js?apikey=3__mTikX5yZJrEckcALfJ-DEbe1SDdfaDvIRMVZvz0if3K-v-XoFJeoWbka6t32ncf">
+  {customEventMap: {
+      eventMap: [{
+          events: '*',
+          args: [function(e) {
+              return e;
+          }],
+          method: function(e) {
+              if (e.fullEventName === 'accounts.login') {
+                  // Increment number of logins count.
+        gigya.accounts.setAccountInfo({
+                      data: {
+                      previousLogins1: (e.data.previousLogins1 || 0) + 1
+                      }
+                  });
+                      if (typeof(e.data.previousLogins1) !== 'undefined') {
+                      if (e.data.previousLogins1 == 2)
+
+                      {
+                      gigya.accounts.showScreenSet({screenSet:'profileUpdate_anton', containerID:'my-reglog', startScreen:'ProfileUpdate_progressive'});
+                    }
+                  }
+              }
+          }
+      }]
+  }
+}
+  </script>
 </head>
 
 <body onload="onLoad()">
@@ -285,72 +312,20 @@
     var paramsRegister = {
       screenSet: "reglog_anton",
       containerID: "my-reglog",
-      startScreen: "anton-register-screen",
-      onAfterSubmit: formCheck
-    }
+      startScreen: "anton-register-screen"
+        }
     // Load Login screen
     var paramsLogin = {
       screenSet: "reglog_anton",
       containerID: "my-reglog",
-      startScreen: "login-screen",
-      onAfterSubmit: formCheck
-    }
+      startScreen: "login-screen"
+        }
     // Load Edit profile screen
     var paramsProfileUpdate = {
       screenSet: "profileUpdate_anton",
       containerID: "my-reglog",
-      startScreen: "update-profile-screen",
-      onAfterSubmit: formCheckProfileUpdate
-    }
-    // Set account_type
-    function formCheck(eventObj) {
-      if (eventObj.data.account_type1 == "vip1") {
-        gigya.accounts.setAccountInfo({
-          data: {
-            sub_typeA: true,
-            sub_typeB: false
-          }
-        });
-        return errors[0];
-      }
-      if (eventObj.data.account_type1 == "vip2") {
-        gigya.accounts.setAccountInfo({
-          data: {
-            sub_typeB: true,
-            sub_typeA: false
-          }
-        });
-        return errors[1];
-      }
-    }
-    //Hide Edit btn
-    function formCheckProfileUpdate(eventObj) {
-      if (eventObj.data.account_type1 == "vip1") {
-        gigya.accounts.setAccountInfo({
-          data: {
-            sub_typeA: true,
-            sub_typeB: false
-          }
-        });
-        gigya.accounts.hideScreenSet({
-          containerID: "my-reglog"
-        });
-        return errors[0];
-      }
-      if (eventObj.data.account_type1 == "vip2") {
-        gigya.accounts.setAccountInfo({
-          data: {
-            sub_typeB: true,
-            sub_typeA: false
-          }
-        });
-        gigya.accounts.hideScreenSet({
-          containerID: "my-reglog"
-        });
-        alert("The profile information has been updated");
-        return errors[1];
-      }
-    }
+      startScreen: "update-profile-screen"
+        }
     //Hide Login buttons
     function hideLoginButtons() {
       document.getElementById("signin-btn").style.display = "none";
@@ -360,7 +335,9 @@
       gigya.accounts.hideScreenSet({
         containerID: "my-reglog"
       });
+
       alert("You are now signed in");
+
     }
     // Logout
     function LogoutHandler() {
@@ -373,6 +350,7 @@
       });
       alert("You are now signed out");
     }
+
   </script>
 
 </body>
