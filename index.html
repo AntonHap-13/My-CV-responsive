@@ -9,37 +9,11 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script type="text/javascript" lang="javascript" src="https://cdns.ru1.gigya.com/js/gigya.js?apikey=3__mTikX5yZJrEckcALfJ-DEbe1SDdfaDvIRMVZvz0if3K-v-XoFJeoWbka6t32ncf">
-  {customEventMap: {
-      eventMap: [{
-          events: '*',
-          args: [function(e) {
-              return e;
-          }],
-          method: function(e) {
-              if (e.fullEventName === 'accounts.login') {
-                  // Increment number of logins count.
-        gigya.accounts.setAccountInfo({
-                      data: {
-                      previousLogins1: (e.data.previousLogins1 || 0) + 1
-                      }
-                  });
-                      if (typeof(e.data.previousLogins1) !== 'undefined') {
-                      if (e.data.previousLogins1 == 2)
-
-                      {
-                      gigya.accounts.showScreenSet({screenSet:'profileUpdate_anton', containerID:'my-reglog', startScreen:'ProfileUpdate_progressive'});
-                    }
-                  }
-              }
-          }
-      }]
-  }
-}
   </script>
 </head>
 
 <body onload="onLoad()">
-  <main>
+    <main>
     <!-- ***********************  ABOUT / PROFILE  *********************** -->
     <header>
       <nav>
@@ -49,11 +23,12 @@
         </div>
 
         <div class="login-buttons">
+          <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="socialLogin.html">Social</a></button>
+
           <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsRegister);">Register</a></button>
           <button class="glow-on-hover" id="login-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsLogin);">Login</a></button>
-          <button class="glow-on-hover" id="edit" type="button" name="button" style="display:none"><a href="#" onclick="gigya.accounts.showScreenSet(paramsProfileUpdate);">Edit Your Profile</a></button>
-          <button class="glow-on-hover" id="logout" type="button" name="button" style="display:none"><a href="#" onclick="gigya.accounts.logout(LogoutHandler);">Logout</a></button>
-          <button class="glow-on-hover"  type="button" name="button"><a href="resetpassword.html">Forgot password</a></button>
+          <button class="glow-on-hover" id="edit" type="button" name="button" style="display: none"><a href="#" onclick="gigya.accounts.showScreenSet(paramsProfileUpdate);">Edit Your Profile</a></button>
+          <button class="glow-on-hover" id="logout" type="button" name="button" style="display: none"><a href="#" onclick="gigya.accounts.logout(LogoutHandler);">Logout</a></button>
         </div>
       </nav>
 
@@ -327,7 +302,7 @@
       containerID: "my-reglog",
       startScreen: "update-profile-screen"
         }
-    //Hide Login buttons
+    // Hide Login buttons
     function hideLoginButtons() {
       document.getElementById("signin-btn").style.display = "none";
       document.getElementById("login-btn").style.display = "none";
@@ -336,9 +311,7 @@
       gigya.accounts.hideScreenSet({
         containerID: "my-reglog"
       });
-
-      alert("You are now signed in");
-
+      console.log("You are now signed in");
     }
     // Logout
     function LogoutHandler() {
@@ -349,7 +322,7 @@
       gigya.accounts.hideScreenSet({
         containerID: "my-reglog"
       });
-      alert("You are now signed out");
+      console.log("You are now signed out");
     }
 
   </script>
