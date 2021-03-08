@@ -23,8 +23,7 @@
         </div>
 
         <div class="login-buttons">
-          <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="socialLogin.html">Social</a></button>
-
+          <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsRegisterVoucher);">Register with voucher</a></button>
           <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsRegister);">Register</a></button>
           <button class="glow-on-hover" id="login-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsLogin);">Login</a></button>
           <button class="glow-on-hover" id="edit" type="button" name="button" style="display: none"><a href="#" onclick="gigya.accounts.showScreenSet(paramsProfileUpdate);">Edit Your Profile</a></button>
@@ -284,6 +283,12 @@
       });
     }
     // Load screen-sets
+    // Load Register Screen
+    var paramsRegisterVoucher = {
+      screenSet: "reglog_anton",
+      containerID: "my-reglog",
+      startScreen: "voucher-registration"
+        }
     // Load Register Screen
     var paramsRegister = {
       screenSet: "reglog_anton",
