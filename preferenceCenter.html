@@ -1,0 +1,162 @@
+<html>
+<head>
+<title>Lite Preferences Center</title>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" lang="javascript" src="https://cdns.ru1.gigya.com/js/gigya.js?apikey=3__mTikX5yZJrEckcALfJ-DEbe1SDdfaDvIRMVZvz0if3K-v-XoFJeoWbka6t32ncf"></script>
+       <style>
+           .valididatedUserContainer {
+               text-align: center;
+           }
+           .directVisitorContainer {
+               text-align: left;
+           }
+           #valididatedUserContainer {
+               display: none;
+           }
+           #directVisitorContainer {
+               display: block;
+           }
+           .emailSuccessContainer {
+               text-align: center;
+           }
+           #emailSuccessContainer {
+               display: none;
+           }
+           #userEmail {
+               width: 50%;
+           }
+
+           #subScreenContainer {
+               border: 2px solid navy;
+               padding: 0px 10px 10px 10px;
+               margin-top:25px;
+           }
+           .prefsBtn, .sendInviteBtn {
+               width: 300px;
+               height: 50px;
+               background-color: navy;
+               color: skyblue;
+               cursor: pointer;
+               font-size: 16px;
+           }
+           .strike {
+               text-decoration: line-through;
+           }
+       </style>
+</head>
+<body>
+<div class="pageBodyContent" id="">
+      <script>
+       var __pcenter = window.__pcenter || {};
+       console.log("PCenter: ", __pcenter);
+       __pcenter.tools = __pcenter.tools || {};
+       __pcenter.tools.fullUrl = window.location.href;
+       __pcenter.tools.fullPath = window.location.pathname;
+       __pcenter.tools.fullSearch = window.location.search;
+
+       __pcenter.user = __pcenter.user || {};
+       __pcenter.user.isValid = false;
+       __pcenter.user.isVerified = false;
+
+       // check if the user is viewing the page via an access link or directly. returns true if user has a regtoken.
+       __pcenter.tools.checkArrivingUser = function() {
+           var isValidated;
+           if (__pcenter.tools.fullSearch.indexOf("gig_regToken") > -1) {
+               isValidated = true;
+               __pcenter.user.isValid = true;
+           } else {
+               isValidated = false;
+           }
+           return isValidated;
+       };
+
+       // email regex checker from https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript
+       function validateEmail(email) {
+           var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+           return re.test(String(email).toLowerCase());
+       }
+
+       // process an invitation response
+       var showSuccessContainer = function() {
+           document.getElementById('directVisitorContainer').style.display = "none";
+           document.getElementById('emailSuccessContainer').style.display = "block";
+       };
+
+       // Send an invitation - Ajax
+       __pcenter.tools.sendInvitation = function(email) {
+           if ((!!email) && (validateEmail(email) === true)) {
+               $.post('sendLiteInvite.php', {"email":email})
+               .done(function(data) {
+                   var returnedResponse = data;
+                   console.log(returnedResponse);
+                   if (returnedResponse == "Success") {
+                       showSuccessContainer();
+                   } else {
+                       alert("There was a server error.");
+                       return false;
+                   }
+               });
+           } else {
+               alert("The email address entered is invalid.");
+           }
+       };
+      </script>
+
+       <h2>Lite Preferences Center</h2>
+       <hr><br />
+
+       <div class="emailSuccessContainer" id="emailSuccessContainer">
+           EMAIL Success Container <br /><br />
+           Please check your email box for your invitation link.
+       </div>
+
+       <div class="valididatedUserContainer" id="valididatedUserContainer">
+           Validated User Container<br /><br />
+           <button class="prefsBtn" id="showConsentScreenBtn">Open Consent Preferences</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="prefsBtn" id="showCommunicationScreenBtn">Open Communication Preferences</button>
+       </div>
+       <div class="directVisitorContainer" id="directVisitorContainer">
+           To access your Lite Preferences Center, enter your email address and click the following button to receive an email invitation.<br /><br /><br />
+           Email: <input type="text" class="" id="userEmail" name=""><br /><br />
+           <button class="sendInviteBtn" id="sendInviteBtn">Send Invitation</button><br /><br />
+           If you have not yet subscribed to our awesome and creative newsletters, please use the form below to subscribe, then refresh the page to send an invite to your email.
+           <div id="subScreenContainer"></div>
+
+       </div>
+       <script>
+       // activate the buttons
+       var sendInvitationButton = document.getElementById('sendInviteBtn');
+       var userEmailField = document.getElementById('userEmail');
+       sendInvitationButton.addEventListener("click", function() {
+           var userEmail = document.getElementById('userEmail').value;
+           __pcenter.tools.sendInvitation(userEmail);
+       });
+       var showConsentScreenBtn = document.getElementById('showConsentScreenBtn');
+       var showCommunicationScreenBtn = document.getElementById('showCommunicationScreenBtn');
+       showConsentScreenBtn.addEventListener("click", function() {
+           gigya.accounts.showScreenSet({
+               "screenSet":"LitePreferencesCenter-ProfileUpdate",
+               "startScreen":"gigya-privacy-screen"
+           });
+       });
+       showCommunicationScreenBtn.addEventListener("click", function() {
+           gigya.accounts.showScreenSet({
+               "screenSet":"LitePreferencesCenter-ProfileUpdate",
+               "startScreen":"gigya-communication-screen"
+           });
+       });
+
+       // check if the user is arriving directly or using a link and display the appropriate info
+       var visitingUserContainer = document.getElementById('directVisitorContainer');
+       var validatedUserContainer = document.getElementById('valididatedUserContainer');
+       if (__pcenter.tools.checkArrivingUser() === true) {
+           validatedUserContainer.style.display = "block";
+           visitingUserContainer.style.display = "none";
+       }
+       gigya.accounts.showScreenSet({
+           "screenSet":"LitePreferencesCenter-LiteRegistration",
+           "containerID":"subScreenContainer"
+       });
+       </script>
+   </div><!-- /.pageBodyContent end -->
+</body>
+</html>
