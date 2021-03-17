@@ -24,7 +24,7 @@
 
         <div class="login-buttons">
           <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsLiteRegistration);">Lite Registration</a></button>
-          <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsRegisterVoucher);">Register with voucher</a></button>
+          <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsMobileLogin);">Mobile Login</a></button>
           <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsRegister);">Register</a></button>
           <button class="glow-on-hover" id="login-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsLogin);">Login</a></button>
           <button class="glow-on-hover" id="edit" type="button" name="button" style="display: none"><a href="#" onclick="gigya.accounts.showScreenSet(paramsProfileUpdate);">Edit Your Profile</a></button>
@@ -314,6 +314,12 @@
       containerID: "my-reglog",
       startScreen: "update-profile-screen"
         }
+        // Load Mobile Login screen
+        var paramsMobileLogin = {
+          screenSet: "reglog_anton",
+          containerID: "my-reglog",
+          startScreen: "anton-mobileLogin"
+            }
     // Hide Login buttons
     function hideLoginButtons() {
       document.getElementById("signin-btn").style.display = "none";
