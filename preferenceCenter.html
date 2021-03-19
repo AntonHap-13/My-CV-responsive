@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Lite Preferences Center</title>
+<title>Lite Preference Center</title>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script type="text/javascript" lang="javascript" src="https://cdns.ru1.gigya.com/js/gigya.js?apikey=3__mTikX5yZJrEckcALfJ-DEbe1SDdfaDvIRMVZvz0if3K-v-XoFJeoWbka6t32ncf"></script>
        <style>
@@ -134,14 +134,14 @@
        var showCommunicationScreenBtn = document.getElementById('showCommunicationScreenBtn');
        showConsentScreenBtn.addEventListener("click", function() {
            gigya.accounts.showScreenSet({
-               "screenSet":"LitePreferencesCenter-ProfileUpdate",
-               "startScreen":"gigya-privacy-screen"
+               "screenSet":"anton_LiteRegistration",
+               "startScreen":"anton-lite-privacy"
            });
        });
        showCommunicationScreenBtn.addEventListener("click", function() {
            gigya.accounts.showScreenSet({
-               "screenSet":"LitePreferencesCenter-ProfileUpdate",
-               "startScreen":"gigya-communication-screen"
+               "screenSet":"anton_LiteRegistration",
+               "startScreen":"anton-lite-communication"
            });
        });
 
@@ -153,7 +153,7 @@
            visitingUserContainer.style.display = "none";
        }
        gigya.accounts.showScreenSet({
-           "screenSet":"LitePreferencesCenter-LiteRegistration",
+           "screenSet":"anton_LiteRegistration",
            "containerID":"subScreenContainer"
        });
        </script>

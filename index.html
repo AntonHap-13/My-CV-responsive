@@ -23,6 +23,7 @@
         </div>
 
         <div class="login-buttons">
+          <button class="glow-on-hover" type="button" name="button"><a href="preferenceCenter.html">Lite Preferences Center</a></button>
           <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsLiteRegistration);">Lite Registration</a></button>
           <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsMobileLogin);">Mobile Login</a></button>
           <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsRegister);">Register</a></button>
@@ -322,13 +323,14 @@
             }
     // Hide Login buttons
     function hideLoginButtons() {
-      // Opens Edit Profile Screen after login event
-      gigya.accounts.showScreenSet ({screenSet: "profileUpdate_anton", containerID:"my-reglog", startScreen:"update-profile-screen"});
       document.getElementById("signin-btn").style.display = "none";
       document.getElementById("login-btn").style.display = "none";
       document.getElementById("edit").style.display = "inherit";
       document.getElementById("logout").style.display = "inherit";
-      }
+      // Opens Edit Profile Screen after login event
+      gigya.accounts.showScreenSet ({screenSet: "profileUpdate_anton", containerID:"my-reglog", startScreen:"update-profile-screen"});
+},
+    }
     // Logout
     function LogoutHandler() {
       document.getElementById("signin-btn").style.display = "inherit";
