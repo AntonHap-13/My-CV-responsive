@@ -82,8 +82,7 @@ nav{
 }
 .login-buttons {
   width: 100%;
-  display: flex;
-  justify-content: flex-end;
+  display: inline-block;
   align-self: center;
 }
 .logo{
