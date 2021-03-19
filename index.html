@@ -12,7 +12,7 @@
   </script>
 </head>
 
-<body onload="onLoad()">
+<body>
     <main>
     <!-- ***********************  ABOUT / PROFILE  *********************** -->
     <header>
@@ -278,12 +278,12 @@
   </main>
   <script>
 // onLoad handlers
-    function onLoad() {
-        gigya.accounts.addEventHandlers({
-        // onLogin: hideLoginButtons,
-        onLogout: LogoutHandler
-      });
-    }
+    // function onLoad() {
+    //     gigya.accounts.addEventHandlers({
+    //     // onLogin: hideLoginButtons,
+    //     onLogout: LogoutHandler
+    //   });
+    // }
     // Load screen-sets
     // Load Voucher Register Screen
     var paramsRegisterVoucher = {
@@ -331,16 +331,16 @@
     //   document.getElementById("logout").style.display = "inherit";
     //   }
     // Logout
-    function LogoutHandler() {
-      document.getElementById("signin-btn").style.display = "inherit";
-      document.getElementById("login-btn").style.display = "inherit";
-      document.getElementById("edit").style.display = "none";
-      document.getElementById("logout").style.display = "none";
-      gigya.accounts.hideScreenSet({
-        containerID: "my-reglog"
-      });
-      console.log("You are now signed out");
-    }
+    // function LogoutHandler() {
+    //   document.getElementById("signin-btn").style.display = "inherit";
+    //   document.getElementById("login-btn").style.display = "inherit";
+    //   document.getElementById("edit").style.display = "none";
+    //   document.getElementById("logout").style.display = "none";
+    //   gigya.accounts.hideScreenSet({
+    //     containerID: "my-reglog"
+    //   });
+    //   console.log("You are now signed out");
+    // }
 
   </script>
 
