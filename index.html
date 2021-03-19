@@ -12,7 +12,7 @@
   </script>
 </head>
 
-<body>
+<body onload="onLoad()">
     <main>
     <!-- ***********************  ABOUT / PROFILE  *********************** -->
     <header>
@@ -278,12 +278,12 @@
   </main>
   <script>
 // onLoad handlers
-    // function onLoad() {
-    //     gigya.accounts.addEventHandlers({
-    //     // onLogin: hideLoginButtons,
-    //     onLogout: LogoutHandler
-    //   });
-    // }
+    function onLoad() {
+        gigya.accounts.addEventHandlers({
+        // onLogin: hideLoginButtons,
+        // onLogout: LogoutHandler
+      });
+    }
     // Load screen-sets
     // Load Voucher Register Screen
     var paramsRegisterVoucher = {
