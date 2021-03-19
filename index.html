@@ -280,7 +280,7 @@
 // onLoad handlers
     function onLoad() {
         gigya.accounts.addEventHandlers({
-        onLogin: hideLoginButtons,
+        // onLogin: hideLoginButtons,
         onLogout: LogoutHandler
       });
     }
@@ -322,13 +322,14 @@
           startScreen: "anton-mobileLogin"
             }
     // Hide Login buttons
-    function hideLoginButtons() {
-      // Opens Edit Profile Screen after login event
-          document.getElementById("signin-btn").style.display = "none";
-      document.getElementById("login-btn").style.display = "none";
-      document.getElementById("edit").style.display = "inherit";
-      document.getElementById("logout").style.display = "inherit";
-      }
+    // function hideLoginButtons() {
+    //   // Opens Edit Profile Screen after login event
+    //   gigya.accounts.showScreenSet ({screenSet: "profileUpdate_anton", containerID:"my-reglog", startScreen:"update-profile-screen"});
+    //   document.getElementById("signin-btn").style.display = "none";
+    //   document.getElementById("login-btn").style.display = "none";
+    //   document.getElementById("edit").style.display = "inherit";
+    //   document.getElementById("logout").style.display = "inherit";
+    //   }
     // Logout
     function LogoutHandler() {
       document.getElementById("signin-btn").style.display = "inherit";
