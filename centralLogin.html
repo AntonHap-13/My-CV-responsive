@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script type="text/javascript" lang="javascript" src="https://cdns.ru1.gigya.com/js/gigya.js?apikey=3__mTikX5yZJrEckcALfJ-DEbe1SDdfaDvIRMVZvz0if3K-v-XoFJeoWbka6t32ncf">
+
   </script>
 </head>
 <body>
@@ -32,15 +33,20 @@
         </header>
 
 <script type="javascript">
-gigya.sso.login(
-        {
-            authFlow: 'redirect',
-            redirectURL:,
-            context: {
-                myCustomLang: 'en',
-                myCustomSessionExpiration: 60 * 60 * 24 * 3
-            }
-        })
+gigya.hasSession().then(function(sessionExist) {
+    if(sessionExist) {
+      gigya.sso.continue();
+    } else {
+      showLogin();
+      gigya.accounts.addEventHandlers(
+       {
+         onLogin: function() {
+           gigya.sso.continue()
+         }
+      })
+    }
+});
+
         var paramsLogin = {
           screenSet: "reglog_anton",
           containerID: "my-reglog",
