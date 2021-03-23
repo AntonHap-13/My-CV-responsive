@@ -32,9 +32,12 @@
       </contaier>
         </header>
 
-<script type="javascript">
+<script>
 var paramsSO = {
-  screenSet: "reglog_anton", containerID: "my-reglog", startScreen: "login-screen"},
+  screenSet: "reglog_anton",
+  containerID: "my-reglog",
+  startScreen: "login-screen"};
+
 gigya.hasSession().then(function(sessionExist) {
     if(sessionExist) {
       gigya.sso.continue();
@@ -47,7 +50,7 @@ gigya.hasSession().then(function(sessionExist) {
          }
       })
     }
-})
+});
 </script>
 </body>
 
