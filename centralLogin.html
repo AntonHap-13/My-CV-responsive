@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <title>Anton Haptyanov, Front-end Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" lang="javascript" src="https://cdns.ru1.gigya.com/js/gigya.js?apikey=3__mTikX5yZJrEckcALfJ-DEbe1SDdfaDvIRMVZvz0if3K-v-XoFJeoWbka6t32ncf">
+  gigya.hasSession().then(function(sessionExist) {
+    if(sessionExist) {
+      gigya.sso.continue();
+    } else {
+      showLogin();
+      gigya.accounts.addEventHandlers(
+       {
+         onLogin: function() {
+           gigya.sso.continue()
+         }
+      })
+    }
+})
+  </script>
+</head>
+<body>
+    <main>
+    <!-- ***********************  ABOUT / PROFILE  *********************** -->
+    <header>
+      <nav>
+        <div class="logo">
+          <img id="sap-logo" src="img/logo.svg" alt="SAP logo"> </img>
+          <h2>SAP CDC GIGYA</h2>
+        </div>
+
+        <div class="login-buttons">
+                    <button class="glow-on-hover" id="login-btn" type="button" name="button"><a href="#" onclick="gigya.sso.login();">Login</a></button>
+                    <button class="glow-on-hover" id="logout" type="button" name="button"><a href="#" onclick="gigya.accounts.logout();">Logout</a></button>
+        </div>
+      </nav>
+
+      <contaier class="reglog-wrapper">
+        <div id="my-reglog"></div>
+      </contaier>
+        </header>
+
+<script type="javascript">
+gigya.sso.login(
+        {
+            authFlow: 'redirect',
+            redirectURL:,
+            context: {
+                myCustomLang: 'en',
+                myCustomSessionExpiration: 60 * 60 * 24 * 3
+            }
+        });
+</script>
+</body>
+
+</html>

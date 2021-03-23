@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no">
@@ -11,9 +10,7 @@
   <script type="text/javascript" lang="javascript" src="https://cdns.ru1.gigya.com/js/gigya.js?apikey=3__mTikX5yZJrEckcALfJ-DEbe1SDdfaDvIRMVZvz0if3K-v-XoFJeoWbka6t32ncf">
   </script>
 </head>
-
 <body>
-
     <main>
     <!-- ***********************  ABOUT / PROFILE  *********************** -->
     <header>
@@ -28,9 +25,9 @@
           <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsLiteRegistration);">Lite Registration</a></button>
           <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsMobileLogin);">Mobile Login</a></button>
           <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsRegister);">Register</a></button>
-          <button class="glow-on-hover" id="login-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsLogin);">Login</a></button>
+          <button class="glow-on-hover" id="login-btn" type="button" name="button"><a href="#" onclick="gigya.sso.login()">Login</a></button>
           <button class="glow-on-hover" id="edit" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsProfileUpdate);">Edit Your Profile</a></button>
-          <button class="glow-on-hover" id="logout" type="button" name="button"><a href="#" onclick="gigya.accounts.logout(LogoutHandler);">Logout</a></button>
+          <button class="glow-on-hover" id="logout" type="button" name="button"><a href="#" onclick="gigya.accounts.logout();">Logout</a></button>
         </div>
       </nav>
 
@@ -305,11 +302,14 @@
       startScreen: "anton-register-screen"
         }
     // Load Login screen
-    var paramsLogin = {
-      screenSet: "reglog_anton",
-      containerID: "my-reglog",
-      startScreen: "login-screen"
-        }
+    // var paramsLogin = {
+    //   screenSet: "reglog_anton",
+    //   containerID: "my-reglog",
+    //   startScreen: "login-screen"
+    //     }
+    // SSO login
+    gigya.sso.login(
+        {authFlow: 'redirect'});
     // Load Edit profile screen
     var paramsProfileUpdate = {
       screenSet: "profileUpdate_anton",
