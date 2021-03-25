@@ -1,9 +1,9 @@
 <?php
 
-include_once("../SDK/php/GSSDK.php"); // Path to Gigya PHP SDK
+include_once("./php-sdk/GSSDK.php"); // Path to Gigya PHP SDK
 
-$apiKey = "Your-API-Key";
-$secretKey = "Your Partner Secret";
+$apiKey = "3_MwTJI9kYDEV8N41PJ0RotLXRmaDBIwz4ZwQWU_3b3kH0PvyQouq_CtO7oA7xvrWB";
+$secretKey = "BMP6ID1gmhu5BiIX93NpGRw3ENPJ66CLpAz2p+IYIQI=";
 
 $incEmail = null;
 if (isset($_POST['email']) && $_POST['email'] !== "") {
