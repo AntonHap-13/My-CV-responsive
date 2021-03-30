@@ -285,6 +285,11 @@
     // }
     // Load screen-sets
     // Load Voucher Register Screen
+
+    function editProfileScreen (eventObj) {
+       gigya.accounts.showScreenSet ({screenSet: "profileUpdate_anton", containerID:"my-reglog", startScreen:"update-profile-screen"});
+       },
+
     var paramsRegisterVoucher = {
       screenSet: "reglog_anton",
       containerID: "my-reglog",
@@ -300,13 +305,15 @@
     var paramsRegister = {
       screenSet: "reglog_anton",
       containerID: "my-reglog",
-      startScreen: "anton-register-screen"
+      startScreen: "anton-register-screen",
+      onLogin: editProfileScreen
         }
     // Load Login screen
     var paramsLogin = {
       screenSet: "reglog_anton",
       containerID: "my-reglog",
-      startScreen: "login-screen"
+      startScreen: "login-screen",
+      onLogin: editProfileScreen
         }
         // Load Edit profile screen
     var paramsProfileUpdate = {
