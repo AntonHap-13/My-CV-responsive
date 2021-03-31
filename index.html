@@ -283,8 +283,15 @@
     //     onLogout: LogoutHandler
     //   });
     // }
-    // Load screen-sets
-    // Load Voucher Register Screen
+  
+    // Load Login screen
+    var paramsLogin = {
+      screenSet: "reglog_anton",
+      containerID: "my-reglog",
+      startScreen: "login-screen",
+      onLogin: editProfileScreen
+        }
+
 
     function onLogout(response) {
     if ( response.errorCode == 0 ) {
@@ -293,7 +300,7 @@
     else {
     alert('Error :' + response.errorMessage);
     }
-    
+
     function editProfileScreen (eventObj) {
        nextScreen: "profileUpdate_anton/update-profile-screen"
        }
@@ -316,13 +323,7 @@
       startScreen: "anton-register-screen",
       onLogin: editProfileScreen
         }
-    // Load Login screen
-    var paramsLogin = {
-      screenSet: "reglog_anton",
-      containerID: "my-reglog",
-      startScreen: "login-screen",
-      onLogin: editProfileScreen
-        }
+
         // Load Edit profile screen
     var paramsProfileUpdate = {
       screenSet: "profileUpdate_anton",
