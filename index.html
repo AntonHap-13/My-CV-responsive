@@ -294,7 +294,7 @@
             }
 
             function editProfileScreen (eventObj) {
-               nextScreen: "profileUpdate_anton/update-profile-screen"
+               nextScreen: "anton-editProfile-childA/update-profile-screen"
                }
     // Load Register Screen
     var paramsRegister = {
@@ -306,7 +306,7 @@
 
         // Load Edit profile screen
     var paramsProfileUpdate = {
-      screenSet: "profileUpdate_anton",
+      screenSet: "anton-editProfile-childA",
       containerID: "my-reglog",
       startScreen: "update-profile-screen"
         }
@@ -325,29 +325,6 @@ function SSOLogin () {
 });
 }
 </script>
-//Logout
-
-    // Hide Login buttons
-    // function hideLoginButtons() {
-    //   // Opens Edit Profile Screen after login event
-    //   gigya.accounts.showScreenSet ({screenSet: "profileUpdate_anton", containerID:"my-reglog", startScreen:"update-profile-screen"});
-    //   document.getElementById("signin-btn").style.display = "none";
-    //   document.getElementById("login-btn").style.display = "none";
-    //   document.getElementById("edit").style.display = "inherit";
-    //   document.getElementById("logout").style.display = "inherit";
-    //   }
-    // Logout
-    // function LogoutHandler() {
-    //   document.getElementById("signin-btn").style.display = "inherit";
-    //   document.getElementById("login-btn").style.display = "inherit";
-    //   document.getElementById("edit").style.display = "none";
-    //   document.getElementById("logout").style.display = "none";
-    //   gigya.accounts.hideScreenSet({
-    //     containerID: "my-reglog"
-    //   });
-    //   console.log("You are now signed out");
-    // }
-
 
 </body>
 
