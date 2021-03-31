@@ -293,15 +293,15 @@
           startScreen: "gigya-subscribe-with-email-screen"
             }
 
-            function editProfileScreen (eventObj) {
-               gigya.accounts.showScreenSet({screenSet:'anton-editProfile-childA',startScreen: "update-profile-screen"})
+            // function editProfileScreen (eventObj) {
+
                }
     // Load Register Screen
     var paramsRegister = {
       screenSet: "anton_child-A",
       containerID: "my-reglog",
       startScreen: "anton-register-screen",
-      onLogin: editProfileScreen
+      onLogin: gigya.accounts.showScreenSet({screenSet:'anton-editProfile-childA', containerID: "my-reglog", startScreen: "update-profile-screen"})
         }
 
         // Load Edit profile screen
