@@ -28,7 +28,7 @@
           <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsLogin);">Login</a></button>
           <button class="glow-on-hover" id="login-btn" type="button" name="button"><a href="https://my-cv-responsive.vercel.app/centralLogin.html" onclick="SSOLogin()">SSO Login</a></button>
           <button class="glow-on-hover" id="edit" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsProfileUpdate);">Edit Your Profile</a></button>
-          <button class="glow-on-hover" id="logout" type="button" name="button"><a href="#" onclick="gigya.accounts.logout(onLogout);">Logout</a></button>
+          <button class="glow-on-hover" id="logout" type="button" name="button"><a href="#" onclick="gigya.accounts.logout();">Logout</a></button>
         </div>
       </nav>
 
@@ -276,13 +276,7 @@
     </footer>
   </main>
 <script>
-// onLoad handlers
-    // function onLoad() {
-    //     gigya.accounts.addEventHandlers({
-    //     onLogin: hideLoginButtons,
-    //     onLogout: LogoutHandler
-    //   });
-    // }
+
 
     // Load Login screen
     var paramsLogin = {
@@ -292,30 +286,16 @@
       onLogin: editProfileScreen
         }
 
-
-    function onLogout(response) {
-    if ( response.errorCode == 0 ) {
-    alert('You are now logged out');
-    }
-    else {
-    alert('Error :' + response.errorMessage);
-    }
-
-    function editProfileScreen (eventObj) {
-       nextScreen: "profileUpdate_anton/update-profile-screen"
-       }
-
-    var paramsRegisterVoucher = {
-      screenSet: "reglog_anton",
-      containerID: "my-reglog",
-      startScreen: "voucher-registration"
-        }
-        // Load Lite Registration Screen
+            // Load Lite Registration Screen
         var paramsLiteRegistration = {
           screenSet: "anton_LiteRegistration",
           containerID: "my-reglog",
           startScreen: "gigya-subscribe-with-email-screen"
             }
+
+            function editProfileScreen (eventObj) {
+               nextScreen: "profileUpdate_anton/update-profile-screen"
+               }
     // Load Register Screen
     var paramsRegister = {
       screenSet: "reglog_anton",
