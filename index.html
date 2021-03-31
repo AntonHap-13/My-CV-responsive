@@ -276,14 +276,16 @@
     </footer>
   </main>
 <script>
-
+function editProfileScreen (eventObj) {
+   gigya.accounts.showScreenSet({screenSet:'anton-editProfile-childA', containerID: "my-reglog", startScreen: "update-profile-screen"})
+   }
 
     // Load Login screen
     var paramsLogin = {
       screenSet: "anton_child-A",
       containerID: "my-reglog",
       startScreen: "login-screen",
-      onLogin: onLogin: gigya.accounts.showScreenSet({screenSet:'anton-editProfile-childA', containerID: "my-reglog", startScreen: "update-profile-screen"})
+      onLogin: editProfileScreen
         }
 
             // Load Lite Registration Screen
@@ -293,15 +295,13 @@
           startScreen: "gigya-subscribe-with-email-screen"
             }
 
-            // function editProfileScreen (eventObj) {
 
-               
     // Load Register Screen
     var paramsRegister = {
       screenSet: "anton_child-A",
       containerID: "my-reglog",
       startScreen: "anton-register-screen",
-      onLogin: gigya.accounts.showScreenSet({screenSet:'anton-editProfile-childA', containerID: "my-reglog", startScreen: "update-profile-screen"})
+      onLogin: editProfileScreen
         }
 
         // Load Edit profile screen
