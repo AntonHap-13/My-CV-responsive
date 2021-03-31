@@ -286,6 +286,14 @@
     // Load screen-sets
     // Load Voucher Register Screen
 
+    function onLogout(response) {
+    if ( response.errorCode == 0 ) {
+    alert('You are now logged out');
+    }
+    else {
+    alert('Error :' + response.errorMessage);
+    }
+    
     function editProfileScreen (eventObj) {
        nextScreen: "profileUpdate_anton/update-profile-screen"
        }
@@ -337,13 +345,7 @@ function SSOLogin () {
 }
 
 //Logout
-function onLogout(response) {
-if ( response.errorCode == 0 ) {
-alert('You are now logged out');
-}
-else {
-alert('Error :' + response.errorMessage);
-}
+
     // Hide Login buttons
     // function hideLoginButtons() {
     //   // Opens Edit Profile Screen after login event
