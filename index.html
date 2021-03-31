@@ -25,7 +25,7 @@
           <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsLiteRegistration);">Lite Registration</a></button>
           <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsMobileLogin);">Mobile Login</a></button>
           <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsRegister);">Register</a></button>
-          <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet({paramsLogin, onLogin:editProfileScreen});">Login</a></button>
+          <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsLogin);">Login</a></button>
           <button class="glow-on-hover" id="login-btn" type="button" name="button"><a href="https://central-login-page.vercel.app/centralLogin.html" onclick="SSOLogin()">SSO Login</a></button>
           <button class="glow-on-hover" id="edit" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsProfileUpdate);">Edit Your Profile</a></button>
           <button class="glow-on-hover" id="logout" type="button" name="button"><a href="#" onclick="gigya.accounts.logout();">Logout</a></button>
@@ -284,8 +284,8 @@ function editProfileScreen(eventObj) {
     var paramsLogin = {
       screenSet: "anton_child-A",
       containerID: "my-reglog",
-      startScreen: "login-screen"
-        }
+      startScreen: "login-screen",
+      onLogin: gigya.accounts.showScreenSet({screenSet: 'anton-editProfile-childA', containerID: 'my-reglog', startScreen: 'update-profile-screen'});
 
             // Load Lite Registration Screen
         var paramsLiteRegistration = {
