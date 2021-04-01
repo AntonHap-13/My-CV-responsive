@@ -283,14 +283,7 @@ gigya.socialize.addEventHandlers({
         function editProfileScreen(eventObj) {
            gigya.accounts.showScreenSet({screenSet:'anton-editProfile-childA', containerID: "my-reglog", startScreen: "update-profile-screen"})
            }
-           function onLogout(response) {
-           if ( response.errorCode == 0 ) {
-           alert('You are now logged out');
-           }
-           else {
-           alert('Error :' + response.errorMessage);
-           }
-           }
+
 
 
     // Load Login screen
@@ -330,6 +323,21 @@ gigya.socialize.addEventHandlers({
           screenSet: "anton_child-A",
           containerID: "my-reglog",
           startScreen: "anton-mobileLogin"
+            }
+
+//Logout parameters
+            var paramsLogout = {
+              onHide: onLogout
+              // onAfterSubmit: editProfileScreen
+            }
+            function onLogout(response) {
+            if ( response.errorCode == 0 ) {
+            alert('You are now logged out');
+
+            }
+            else {
+            alert('Error :' + response.errorMessage);
+            }
             }
 
 
