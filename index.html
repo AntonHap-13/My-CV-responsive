@@ -320,7 +320,10 @@
             // Load Mobile Login screen
             var paramsSSO = {
               authFlow: 'redirect',
-              redirectURL: 'https://my-cv-responsive.vercel.app/',
+              context: {
+                myCustomLang: 'en',
+                myCustomSessionExpiration: 60 * 60 * 24 * 3
+            }
                 }
 
 </script>
