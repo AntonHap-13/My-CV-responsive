@@ -24,8 +24,8 @@
           <button class="glow-on-hover" type="button" name="button"><a href="preferenceCenter.html">Lite Preferences Center</a></button>
           <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsLiteRegistration);">Lite Registration</a></button>
           <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsMobileLogin);">Mobile Login</a></button>
-          <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsRegister, onLogin);">Register</a></button>
-          <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsLogin, onLogin);">Login</a></button>
+          <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsRegister);">Register</a></button>
+          <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsLogin);">Login</a></button>
           <button class="glow-on-hover" id="login-btn" type="button" name="button"><a href="#" onclick="gigya.sso.login({authFlow: 'redirect', context: {myCustomLang: 'en', myCustomSessionExpiration: 60 * 60 * 24 * 3}});">SSO Login</a></button>
           <button class="glow-on-hover" id="edit" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsProfileUpdate);">Edit Your Profile</a></button>
           <!-- <button class="glow-on-hover" id="logout" type="button" name="button"><a href="#" onclick="gigya.accounts.logout();">Logout</a></button> -->
@@ -280,15 +280,14 @@
 gigya.socialize.addEventHandlers({
         onLogin: editProfileScreen});
 
-        function editProfileScreen(eventObj) {
-           gigya.accounts.showScreenSet({screenSet:'anton-editProfile-childA', containerID: "my-reglog", startScreen: "update-profile-screen"})
-           }
+
 
     // Load Login screen
     var paramsLogin = {
       screenSet: "anton_child-A",
       containerID: "my-reglog",
-      startScreen: "login-screen"
+      startScreen: "login-screen",
+      onLogin
       // onAfterSubmit: editProfileScreen
     }
       // onLogin: gigya.accounts.showScreenSet({screenSet: 'anton-editProfile-childA', containerID: 'my-reglog', startScreen: 'update-profile-screen'})
@@ -305,7 +304,8 @@ gigya.socialize.addEventHandlers({
     var paramsRegister = {
       screenSet: "anton_child-A",
       containerID: "my-reglog",
-      startScreen: "anton-register-screen"
+      startScreen: "anton-register-screen",
+      onLogin
         }
 
         // Load Edit profile screen
@@ -320,7 +320,9 @@ gigya.socialize.addEventHandlers({
           containerID: "my-reglog",
           startScreen: "anton-mobileLogin"
             }
-
+            function editProfileScreen(eventObj) {
+               gigya.accounts.showScreenSet({screenSet:'anton-editProfile-childA', containerID: "my-reglog", startScreen: "update-profile-screen"})
+               }
 
 </script>
 
