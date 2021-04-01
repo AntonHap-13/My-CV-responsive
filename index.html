@@ -327,18 +327,22 @@ gigya.socialize.addEventHandlers({
 
 //Logout parameters
             var paramsLogout = {
-              onHide: onLogout
+              function onLogout(response) {
+              if ( response.errorCode == 0 ) {
+              alert('You are now logged out');
+
+              }
+              else {
+              alert('Error :' + response.errorMessage);
+              }
+            },
+              onHide: hideScreen
               // onAfterSubmit: editProfileScreen
             }
-            function onLogout(response) {
-            if ( response.errorCode == 0 ) {
-            alert('You are now logged out');
 
-            }
-            else {
-            alert('Error :' + response.errorMessage);
-            }
-            }
+
+            function hideScreen(eventObj) {
+              gigya.accounts.hideScreenSet(containerID: "my-reglog")}
 
 
 </script>
