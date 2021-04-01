@@ -26,7 +26,7 @@
           <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsMobileLogin);">Mobile Login</a></button>
           <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsRegister);">Register</a></button>
           <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsLogin);">Login</a></button>
-          <button class="glow-on-hover" id="login-btn" type="button" name="button"><a href="#" onclick="gigya.sso.login(paramsSSO)">SSO Login</a></button>
+          <button class="glow-on-hover" id="login-btn" type="button" name="button"><a href="#" onclick="gigya.sso.login(authFlow: 'redirect')">SSO Login</a></button>
           <button class="glow-on-hover" id="edit" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsProfileUpdate);">Edit Your Profile</a></button>
           <!-- <button class="glow-on-hover" id="logout" type="button" name="button"><a href="#" onclick="gigya.accounts.logout();">Logout</a></button> -->
         </div>
@@ -317,15 +317,7 @@
           startScreen: "anton-mobileLogin"
             }
 
-            // Load Mobile Login screen
-            var paramsSSO = {
-              authFlow: 'redirect',
-              context: {
-                myCustomLang: 'en',
-                myCustomSessionExpiration: 60 * 60 * 24 * 3
-            }
-                }
-
+          
 </script>
 
 </body>
