@@ -28,7 +28,7 @@
           <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsLogin);">Login</a></button>
           <button class="glow-on-hover" id="login-btn" type="button" name="button"><a href="#" onclick="gigya.sso.login({authFlow: 'redirect', context: {myCustomLang: 'en', myCustomSessionExpiration: 60 * 60 * 24 * 3}});">SSO Login</a></button>
           <button class="glow-on-hover" id="edit" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsProfileUpdate);">Edit Your Profile</a></button>
-          <!-- <button class="glow-on-hover" id="logout" type="button" name="button"><a href="#" onclick="gigya.accounts.logout();">Logout</a></button> -->
+          <button class="glow-on-hover" id="logout" type="button" name="button"><a href="#" onclick="gigya.accounts.logout({callback:onLogout});">Logout</a></button>
         </div>
       </nav>
 
@@ -283,6 +283,15 @@ gigya.socialize.addEventHandlers({
         function editProfileScreen(eventObj) {
            gigya.accounts.showScreenSet({screenSet:'anton-editProfile-childA', containerID: "my-reglog", startScreen: "update-profile-screen"})
            }
+           function onLogout(response) {
+           if ( response.errorCode == 0 ) {
+           alert('You are now logged out');
+           }
+           else {
+           alert('Error :' + response.errorMessage);
+           }
+           }
+
 
     // Load Login screen
     var paramsLogin = {
