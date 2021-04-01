@@ -276,8 +276,14 @@
     </footer>
   </main>
 <script>
+
 gigya.socialize.addEventHandlers({
         onLogin: editProfileScreen});
+
+        function editProfileScreen(eventObj) {
+           gigya.accounts.showScreenSet({screenSet:'anton-editProfile-childA', containerID: "my-reglog", startScreen: "update-profile-screen"})
+           }
+
     // Load Login screen
     var paramsLogin = {
       screenSet: "anton_child-A",
@@ -301,9 +307,7 @@ gigya.socialize.addEventHandlers({
       containerID: "my-reglog",
       startScreen: "anton-register-screen"
         }
-        function editProfileScreen(eventObj) {
-           gigya.accounts.showScreenSet({screenSet:'anton-editProfile-childA', containerID: "my-reglog", startScreen: "update-profile-screen"})
-           }
+
         // Load Edit profile screen
     var paramsProfileUpdate = {
       screenSet: "anton-editProfile-childA",
