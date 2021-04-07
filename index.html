@@ -281,12 +281,12 @@ gigya.socialize.addEventHandlers({
         onLogin: editProfileScreen});
 
         function editProfileScreen(eventObj) {
-           gigya.accounts.showScreenSet({screenSet:'anton-editProfile-childA', containerID: "my-reglog", startScreen: "update-profile-screen"})
+           gigya.accounts.showScreenSet({screenSet:'profileUpdate-Vercel site A', containerID: "my-reglog"})
            }
            function onLogout(response) {
            if ( response.errorCode == 0 ) {
            alert('You are now logged out');
-           
+
            }
            else {
            alert('Error :' + response.errorMessage);
@@ -296,9 +296,8 @@ gigya.socialize.addEventHandlers({
 
     // Load Login screen
     var paramsLogin = {
-      screenSet: "anton_child-A",
+      screenSet: "Vercel-sitA-RegLog",
       containerID: "my-reglog",
-      startScreen: "login-screen",
       onLogin: editProfileScreen
       // onAfterSubmit: editProfileScreen
     }
@@ -314,7 +313,7 @@ gigya.socialize.addEventHandlers({
 
     // Load Register Screen
     var paramsRegister = {
-      screenSet: "anton_child-A",
+      screenSet: "Vercel-sitA-RegLog",
       containerID: "my-reglog",
       startScreen: "anton-register-screen",
       onLogin: editProfileScreen
