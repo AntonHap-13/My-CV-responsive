@@ -8,11 +8,11 @@
 <script>
     thisUri = window.location.href;
     decodedUri = decodeURIComponent(thisUri);
-    decodedUri = decodedUri.replace("https://[URI_Of_Your-Error_Page]?", "");
+    decodedUri = decodedUri.replace("https://my-cv-responsive.vercel.app/errorPage.html?", "");
     decodedUri = decodedUri.replace(/,/g, ",<br />&nbsp;&nbsp;&nbsp;&nbsp;");
     decodedUri = decodedUri.replace(/{/g, "{<br />&nbsp;&nbsp;&nbsp;&nbsp;");
     decodedUri = decodedUri.replace(/}/g, "<br />}");
     document.getElementById('responseDiv').innerHTML = decodedUri;
 </script>
 </body>
-</html> 
+</html>
